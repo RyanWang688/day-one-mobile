@@ -1,0 +1,22 @@
+/* A single-screen receipt: identity, map, three metrics and one action. */
+body.trip-app #content.trip-summary{height:100dvh;min-height:100dvh;display:flex;flex-direction:column;gap:12px;padding:calc(var(--safe-top) + var(--title-height) + 12px) 16px calc(var(--nav-height) + var(--dock-height) + 12px)}
+.trip-app .summary-heading{flex:0 0 auto}
+.trip-app .summary-kicker{display:flex;align-items:center;gap:6px;font-size:.75rem;font-weight:600;line-height:1.4;color:var(--success)}
+.trip-app .summary-kicker .icon{width:18px;height:18px}
+.trip-app .summary-heading h1{font-size:1.25rem;line-height:1.25;letter-spacing:-.035em;margin:8px 0 6px}
+.trip-app .summary-heading p{font-size:.8125rem;line-height:1.4;margin:0;color:var(--muted)}
+.trip-app .summary-heading p>span{color:var(--blue);padding:0 4px}
+.trip-app .summary-map{flex:1 1 0;min-height:100px;border-radius:12px;overflow:hidden;border:1px solid var(--line);position:relative}
+.trip-app .summary-map .real-map.large{width:100%;height:100%;border:0;border-radius:0}
+.trip-app .summary-map .leaflet-control-attribution{font-size:8px;line-height:1.3}
+.trip-app .summary-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:12px 0 0;border-top:1px solid var(--line);flex:0 0 auto}
+.trip-app .summary-stats>div+div{border-left:1px solid var(--line);padding-left:12px}
+.trip-app .summary-stats strong{display:block;font-size:1.375rem;line-height:1.2;font-weight:650;letter-spacing:-.04em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.trip-app .summary-stats strong>span{font-size:.8125rem;font-weight:500;letter-spacing:0}
+.trip-app .summary-stats small{display:block;font-size:.75rem;line-height:1.4;color:var(--muted);margin-top:4px}
+.trip-app p.summary-note{margin:0;font-size:.6875rem;line-height:1.4;text-align:center;color:var(--muted);flex:0 0 auto}
+.trip-app .trip-summary .bottom-action{padding:8px 16px;border-top:0;background:var(--bg)}
+@media(max-height:650px){body.trip-app #content.trip-summary{gap:10px;padding-top:calc(var(--safe-top) + var(--title-height) + 12px);padding-bottom:calc(var(--nav-height) + var(--dock-height) + 12px)}.trip-app .summary-heading h1{font-size:1.25rem;margin:4px 0}.trip-app .summary-stats{padding-top:10px}.trip-app .summary-stats strong{font-size:1.375rem}.trip-app .summary-map{border-radius:16px}}
+@media(max-width:374px){body.trip-app #content.trip-summary{padding-left:12px;padding-right:16px}.trip-app .summary-stats{gap:8px}.trip-app .summary-stats>div+div{padding-left:10px}.trip-app .summary-stats small{font-size:.6875rem}}
+/* Larger accessibility text may scroll instead of clipping essential information. */
+@media(max-height:450px){body.trip-app #content.trip-summary{height:auto;min-height:100dvh}.trip-app .summary-map{flex:none;height:140px}}

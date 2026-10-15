@@ -1,0 +1,83 @@
+/* Second pass: reference-led home, map gestures and end-of-trip receipt. */
+.trip-app #content:has(>.home-header){padding-top:calc(var(--safe-top) + 8px)}
+.trip-app #content>.home-header{position:static;transform:none;width:auto;min-height:64px;height:auto;padding:0;margin:0 0 8px;left:auto;top:auto;border:0;background:transparent;backdrop-filter:none}
+.trip-app .home-header .logo{width:60px;height:56px;background-size:484px auto;background-position:-12px -9px}
+.trip-app .home-header>.meta{font-size:.9375rem;font-weight:400}
+.trip-app .home-title{font-size:1.75rem;line-height:1.15;letter-spacing:-.04em;margin:8px 0 20px}
+.trip-app .home-tools{margin-top:0}
+.trip-app .home-tools>.row{margin-bottom:12px}
+.trip-app .home-tools .tools{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.trip-app .home-tools .tool{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;min-height:84px;padding:12px 4px 10px;gap:8px;border-radius:12px;font-size:.75rem;font-weight:500;line-height:1.3;background:white;box-shadow:0 2px 5px #19213205}
+.trip-app .home-tools .tool svg{width:24px;height:24px;flex:none}
+.trip-app .home-tools .tool span{max-width:100%;overflow-wrap:normal}
+.trip-app .home-trip{margin-top:16px;border-radius:14px;box-shadow:none;border-color:#EDF0F5}
+.trip-app .home-trip .photo{height:164px;object-position:center 55%}
+.trip-app .home-trip .pad{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px}
+.trip-app .home-trip-copy{flex:1;min-width:0}
+.trip-app .home-trip h2{font-size:1.0625rem;line-height:1.35;margin:0 0 4px;letter-spacing:-.025em}
+.trip-app .home-trip p{font-size:.8125rem;line-height:1.4;margin:0}
+.trip-app .home-trip .primary{flex:0 0 auto;width:auto;min-height:44px;padding:10px 14px;font-size:.875rem;border-radius:10px}
+.trip-app .home-discoveries{margin-top:20px}
+.trip-app .home-discoveries>.row{gap:8px;margin-bottom:8px;min-height:48px}
+.trip-app .home-discoveries h2{font-size:1.125rem;line-height:1.3}
+.trip-app .home-discoveries .link{display:flex;align-items:center;gap:4px;white-space:nowrap;padding:0;font-size:.8125rem;flex-shrink:0}
+.trip-app .home-discoveries .link .icon{width:16px;height:16px}
+.trip-app .home-discoveries .cards{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:0 16px 8px;scrollbar-width:none}
+.trip-app .home-discoveries .cards::-webkit-scrollbar{display:none}
+.trip-app .home-discoveries .card{flex:0 0 43%;scroll-snap-align:start;border-radius:14px;box-shadow:0 2px 6px #19213205}
+.trip-app .home-discoveries .photo{height:88px}
+.trip-app .home-discoveries .pad{padding:10px 12px}
+.trip-app .home-discoveries h3{font-size:.875rem;line-height:1.35}
+/* A 48px hit area around a restrained 20px map glyph. Zoom is gestural. */
+.trip-app .map-controls{display:block;border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 1px 4px #19213210;background:white}
+.trip-app .real-map .map-controls button{display:grid;place-items:center;width:44px;height:44px;min-height:44px;padding:0;border:0;background:white;color:var(--ink)}
+.trip-app .real-map .map-controls .icon{width:20px;height:20px;stroke-width:1.8;fill:none}
+.trip-app .map-badge{font-size:.6875rem;padding:4px 8px;border-radius:6px}
+.trip-app .real-map:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+/* Completion reads as a compact activity receipt with honest demo metrics. */
+.trip-app .trip-finish-heading{display:flex;gap:16px;align-items:center;margin:8px 0 20px}
+.trip-app .finish-check{width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;border-radius:50%;background:var(--success-soft);color:var(--success)}
+.trip-app .finish-check .icon{width:24px;height:24px;stroke-width:2.2}
+.trip-app .trip-finish-heading .eyebrow{font-size:.6875rem;letter-spacing:.08em;color:var(--success)}
+.trip-app .trip-finish-heading h1{font-size:1.5rem;line-height:1.25;margin:4px 0}
+.trip-app .trip-finish-heading p{font-size:.8125rem;margin:4px 0 0}
+.trip-app .trip-receipt{border-radius:20px;box-shadow:0 4px 20px #19213206}
+.trip-app .receipt-map .real-map{height:172px;border:0;border-radius:0}
+.trip-app .receipt-map .map-badge{display:none}
+.trip-app .receipt-map .leaflet-control-attribution{font-size:9px}
+.trip-app .receipt-body{padding:16px}
+.trip-app .receipt-body>.row{gap:8px;flex-wrap:wrap}
+.trip-app .receipt-status{display:inline-flex;align-items:center;gap:4px;color:var(--success);font-size:.6875rem;line-height:1.4;font-weight:500}
+.trip-app .receipt-status .icon{width:14px;height:14px}
+.trip-app .receipt-body h2{font-size:1.25rem;margin:12px 0 4px}
+.trip-app .receipt-endpoints{font-size:.8125rem;line-height:1.45;margin:0 0 16px}
+.trip-app .receipt-endpoints>span{color:var(--blue);padding:0 4px}
+.trip-app .receipt-metrics{display:grid;grid-template-columns:1.15fr 1.15fr 1fr;gap:12px;padding-top:16px;border-top:1px solid var(--line)}
+.trip-app .receipt-metrics>div+div{border-left:1px solid var(--line);padding-left:12px}
+.trip-app .receipt-metrics strong{display:block;font-size:1.5rem;line-height:1.2;font-weight:650;white-space:nowrap;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.trip-app .receipt-metrics strong>span{font-size:.8125rem;letter-spacing:0;font-weight:500}
+.trip-app .receipt-metrics small{display:block;font-size:.6875rem;margin-top:6px}
+.trip-app .recap-section>.row{margin-bottom:4px}
+.trip-app .recap-section h2{font-size:1.125rem}
+.trip-app .recap-stop{display:flex;align-items:center;gap:12px;position:relative;padding:12px 0;border-bottom:1px solid var(--line)}
+.trip-app .recap-stop img{width:48px;height:48px;object-fit:cover;border-radius:10px;flex:none}
+.trip-app .recap-number{position:absolute;left:32px;top:44px;display:grid;place-items:center;width:20px;height:20px;border:2px solid var(--bg);border-radius:50%;background:var(--blue);color:white;font-size:10px;font-weight:600}
+.trip-app .recap-stop>div{flex:1;min-width:0}
+.trip-app .recap-stop strong{font-size:.9375rem;line-height:1.4;display:block}
+.trip-app .recap-stop small{font-size:.8125rem;display:block;margin-top:4px}
+.trip-app .recap-stop>.icon{width:20px;height:20px;color:var(--success)}
+.trip-app .receipt-note{display:flex;gap:8px;align-items:flex-start;margin:20px 0}
+.trip-app .receipt-note>.icon{width:16px;height:16px;color:var(--muted);margin-top:2px}
+.trip-app .receipt-note p{font-size:.8125rem;line-height:1.5;margin:0}
+.trip-app .summary-explore{margin:0 0 8px}
+@media(max-width:374px){.trip-app .home-title{font-size:1.75rem}.trip-app .home-tools .tools{gap:6px}.trip-app .home-tools .tool{font-size:.6875rem;padding:12px 2px;gap:8px;min-height:80px}.trip-app .home-trip .photo{height:148px}.trip-app .home-trip .pad{padding:12px;gap:8px}.trip-app .home-trip h2{font-size:.9375rem}.trip-app .home-trip p{font-size:.75rem}.trip-app .home-trip .primary{padding:12px;min-width:96px;font-size:.8125rem}.trip-app .home-discoveries .cards{margin-left:-16px;margin-right:-16px;padding-left:16px;padding-right:16px}.trip-app .receipt-metrics{gap:8px}.trip-app .receipt-metrics>div+div{padding-left:8px}}
+@media(min-width:500px){.trip-app .home-trip .photo{height:164px}}
+/* Preserve reference gutters when CSS scroll snapping settles. */
+.trip-app .home-discoveries .cards{scroll-padding-inline:16px}
+.trip-app .home-tools .tools{grid-template-columns:repeat(auto-fit,minmax(min(100%,4rem),1fr))}
+.trip-app .home-trip .pad{flex-wrap:wrap}
+.trip-app .home-trip-copy{flex:1 1 10rem}
+@media(max-width:374px){.trip-app .home-discoveries .cards{scroll-padding-inline:16px}}
+/* Metrics and tool tiles reflow when the user enlarges text. */
+.trip-app .receipt-metrics{grid-template-columns:repeat(auto-fit,minmax(min(100%,4.5rem),1fr))}
+.trip-app #nav .tab-label{max-width:100%;overflow-wrap:anywhere;text-align:center}

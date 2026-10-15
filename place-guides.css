@@ -1,0 +1,24 @@
+/* Shared by the full details page and the place dialog. */
+.trip-app .guide-section{padding:16px 0;border-top:1px solid var(--line)}
+.trip-app .guide-section:first-child{border-top:0;padding-top:0}
+.trip-app .guide-section h3,#place-dialog .guide-section h3{font-size:.9375rem;line-height:1.4;margin:0 0 8px;font-weight:600}
+.trip-app .guide-section p,#place-dialog .guide-section p{font-size:.875rem;line-height:1.5;margin:0 0 8px}
+.trip-app .guide-intro{padding:14px;background:var(--soft);border:0;border-radius:12px;margin-bottom:16px}
+.trip-app .guide-intro:first-child{padding-top:14px}
+.trip-app .guide-pause{display:flex;align-items:center;gap:6px;margin-top:12px;color:var(--link);font-size:.75rem}
+.trip-app .guide-pause .icon{width:16px;height:16px}
+.trip-app .guide-picks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.trip-app .guide-picks li{padding-left:12px;border-left:2px solid #DCE5F8}
+.trip-app .guide-picks strong{font-size:.875rem;font-weight:600;line-height:1.4}
+.trip-app .guide-picks li p,#place-dialog .guide-picks li p{font-size:.8125rem;margin:4px 0 0;line-height:1.5}
+.trip-app a.guide-source-link,#place-dialog a.guide-source-link{display:flex;align-items:center;min-height:44px;font-size:.8125rem;line-height:1.4;color:var(--link);margin:4px 0 0;text-decoration:underline;text-underline-offset:3px}
+.trip-app a.guide-reviews,#place-dialog a.guide-reviews{font-size:.875rem;min-height:44px;margin:12px 0 0;text-decoration:none;display:flex;gap:8px;justify-content:center}
+.trip-app a.guide-reviews .icon{width:18px;height:18px}
+.trip-app p.guide-verification,#place-dialog p.guide-verification{font-size:.6875rem;line-height:1.5;margin:0 0 16px;color:var(--muted)}
+#place-dialog .place-dialog-copy{padding:16px}
+#place-dialog .place-dialog-copy>p{font-size:.8125rem;margin-bottom:16px}
+#place-dialog .place-dialog-photo{height:156px}
+#place-dialog .place-dialog-topbar{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:48px;padding:0 8px 0 16px;background:#FFFFFFF5;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+#place-dialog .place-dialog-topbar strong{font-size:.9375rem;font-weight:600}
+#place-dialog .place-dialog-topbar .modal-close{position:static;min-width:44px;width:44px;min-height:44px;height:44px;border-radius:8px}
+.trip-app #content:has(>.place-guide)>.spot-photo{height:156px}

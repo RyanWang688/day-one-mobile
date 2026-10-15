@@ -1,0 +1,103 @@
+/* Contextual place guide: existing Day One typography, controls and safe areas. */
+.trip-app .ask-hero{position:relative;margin-top:12px;border-radius:12px;overflow:hidden;height:180px;background:var(--soft)}
+.trip-app .ask-hero img{width:100%;height:100%;object-fit:cover}
+.trip-app .ask-hero h1{position:absolute;bottom:0;left:0;right:0;margin:0;padding:24px 12px 12px;display:flex;align-items:center;gap:8px;font-size:18px;line-height:24px;letter-spacing:0;color:white;background:linear-gradient(transparent,rgba(25,33,50,.85))}
+.trip-app .ask-quick{margin-top:20px}
+.trip-app .ask-quick h2{font-size:14px;color:var(--muted);margin-bottom:8px}
+.trip-app .ask-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.trip-app .ask-topic{display:flex;align-items:center;text-align:left;gap:8px;padding:10px 8px;border-radius:12px;background:white;border:1px solid var(--line);min-height:72px}
+.trip-app .ask-topic-icon{display:flex;align-items:center;justify-content:center;flex:0 0 28px;height:32px;border-radius:8px;background:#E7ECFF;color:var(--blue)}
+.trip-app .ask-topic-icon .icon{width:20px;height:20px}
+.trip-app .ask-topic>span:nth-child(2){min-width:0;flex:1}
+.trip-app .ask-topic strong{font-size:11px;line-height:15px;display:block}
+.trip-app .ask-topic small{font-size:10px;line-height:14px;display:block;margin-top:3px}
+.trip-app .ask-topic>.icon{width:12px;height:12px;color:#A5ADC5}
+.trip-app .tone-1{background:#FFE7DE;color:#A33B17}.trip-app .tone-2{background:#CDF6E4;color:#007452}.trip-app .tone-3{background:#FFF2CC;color:#946900}
+.trip-app .ask-conversation{margin:24px 0 16px}
+.trip-app .ask-message{display:flex;gap:10px;margin:12px 0;font-size:13px;line-height:20px}
+.trip-app .ask-message>div{background:#F0F2FF;border-radius:12px;padding:12px;max-width:90%}
+.trip-app .ask-message.user{justify-content:flex-end}.trip-app .ask-message.user>div{background:#E1E9FF}
+.trip-app .guide-symbol{color:var(--blue);font-size:24px;flex:0 0 28px;text-align:center;padding-top:8px}
+.trip-app .ask-demo-label{display:block;font-size:10px;margin-top:8px;color:var(--muted)}
+.trip-app .ask-message a{display:block;font-size:11px;color:var(--blue);margin-top:8px}
+.trip-app .ask-composer form{display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--line);border-radius:12px;padding:6px}
+.trip-app .ask-composer input{min-width:0;flex:1;border:0;background:transparent;font-size:13px;padding:8px;outline-offset:-2px}
+.trip-app .ask-send{width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:var(--blue);color:white}
+/* Scripted conversations: designed recommendations and a prepared next message. */
+.trip-app .ask-composer textarea{flex:1;min-width:0;resize:none;border:0;background:transparent;color:var(--ink);font:inherit;font-size:13px;line-height:18px;padding:6px 8px;height:52px;cursor:pointer}
+.trip-app .ask-composer textarea:disabled{cursor:default;opacity:1;color:var(--muted)}
+.trip-app .ask-message.guide>div{max-width:100%;flex:1;min-width:0}
+.trip-app .ask-message>div>p{margin:0;font-size:13px;line-height:20px;color:var(--ink)}
+.trip-app .ask-picks{display:grid;gap:8px;margin-top:12px}
+.trip-app .ask-pick{display:flex;gap:10px;background:white;padding:12px;border-radius:12px;border:1px solid #E9EAF2}
+.trip-app .ask-pick-icon{width:28px;height:28px;flex:0 0 28px;display:grid;place-items:center;background:var(--soft);color:var(--blue);border-radius:8px}
+.trip-app .ask-pick-icon .icon{width:18px;height:18px}
+.trip-app .ask-pick strong{font-size:13px;line-height:18px}
+.trip-app .ask-pick p{font-size:12px;line-height:18px;margin:3px 0}
+.trip-app .ask-pick small{display:flex;gap:4px;font-size:11px;line-height:16px;margin-top:6px}
+.trip-app .ask-pick small .icon{width:14px;height:14px}
+.trip-app .ask-location{display:flex;gap:6px;align-items:flex-start;margin-top:10px;font-size:11px;line-height:17px;color:var(--muted)}
+.trip-app .ask-location .icon{width:16px;height:16px}
+.trip-app .ask-reply-action{display:flex;align-items:center;gap:8px;min-height:44px;color:var(--blue);font-size:12px;font-weight:600;margin-top:8px;padding:0}
+.trip-app .ask-reply-action .icon{width:18px;height:18px}
+.trip-app .ask-phrase{margin:12px 0 0;padding:12px;border-left:3px solid var(--blue);background:white;border-radius:8px;font-size:15px;line-height:22px;font-weight:600}
+.trip-app .ask-typing{font-size:12px;color:var(--muted);padding:8px 12px}
+.trip-app .ask-finished{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:16px 0;font-size:11px;color:var(--muted)}
+.trip-app .ask-finished .link{font-size:11px}
+.trip-app .ask-conversation{scroll-margin-bottom:160px}
+.trip-app .ask-conversation>*{scroll-margin-top:112px;scroll-margin-bottom:160px}
+#ask-map-dialog{width:min(370px,calc(100vw - 32px));max-height:calc(100dvh - 104px);padding:16px;border:1px solid #E9EAF2;border-radius:15px;color:#192132;background:white}
+#ask-map-dialog::backdrop{background:#19213266}
+#ask-map-dialog header{display:flex;align-items:center;justify-content:space-between;gap:8px}
+#ask-map-dialog h2{font-size:16px;line-height:22px}
+#ask-map-dialog .iconbtn{display:grid;place-items:center;min-width:48px;height:48px;border-radius:12px;background:#F8F8FF}
+#ask-map-dialog p,#ask-map-dialog a{font-size:12px;line-height:18px}
+#ask-map-dialog a{color:#0645BC;display:block;margin-top:12px}
+.ask-map-image{overflow:auto;max-height:52dvh;border-radius:8px;background:#f8f8ff}
+.ask-map-image img{display:block;width:650px;max-width:none}
+body:has(#ask-map-dialog[open]){overflow:hidden}
+
+/* Photo recommendations reuse the compact chat surface and shared AI avatar. */
+.trip-app button.ask-pick{width:100%;text-align:left;color:var(--ink);font:inherit;cursor:pointer;min-height:48px;align-items:flex-start}
+.trip-app .ask-pick.has-photo{display:block;padding:0;overflow:hidden}
+.trip-app .ask-pick.has-photo>img{display:block;width:100%;height:112px;object-fit:cover}
+.trip-app .ask-pick-copy{display:grid;gap:4px;min-width:0;font-size:12px;line-height:16px}
+.trip-app .has-photo .ask-pick-copy{padding:12px}
+.trip-app .ask-card-link{display:flex;align-items:center;gap:8px;color:var(--blue);font-size:11px;margin-top:4px}
+.trip-app .ask-card-link .icon{width:16px;height:16px}
+.trip-app .ask-branch-photo{display:block;width:100%;height:128px;object-fit:cover;border-radius:8px;margin-top:12px}
+.trip-app .ask-pick:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.trip-app .ask-message.guide{gap:8px}
+.trip-app .guide-symbol{flex:0 0 28px;width:28px}
+
+.trip-app .ask-language{display:flex;align-items:center;justify-content:center;gap:4px;min-width:64px;min-height:48px;padding:4px;background:transparent;border:0;color:var(--blue);font-family:inherit;font-size:12px;font-weight:600;line-height:16px;cursor:pointer}.trip-app .ask-language .icon{width:20px;height:20px}.trip-app .ask-phrase-translation{font-size:12px;line-height:20px;color:var(--muted);margin-top:8px}
+
+.trip-app .ask-route-card{background:white;border:1px solid var(--line,#E2E8F0);border-radius:12px;margin-top:12px;padding:12px;overflow:hidden}.ask-route-card>strong{font-size:14px;line-height:20px}.trip-app .ask-route-origin{font-size:11px;line-height:16px;margin:8px 0}.trip-app .ask-street-map{height:240px!important;min-height:240px!important;margin:8px 0;border-radius:8px;isolation:isolate}.ask-route-note{display:block;font-size:11px;line-height:16px;color:#555B70}.ask-route-steps{display:grid;grid-template-columns:24px 1fr;gap:8px;margin-top:12px}.ask-route-steps>span{background:#1554E8;color:white;border-radius:50%;width:24px;height:24px;text-align:center;line-height:24px}.trip-app .ask-route-steps p{font-size:12px;line-height:20px;margin:0}.ask-map-tabs{display:flex;gap:8px;overflow:auto}.ask-map-tabs button{min-height:48px;flex:0 0 auto;max-width:180px;padding:8px;border:0;border-radius:8px;background:#E7ECFF;color:#192132;font:inherit;font-size:11px}.ask-map-tabs button.active{background:#1554E8;color:white}.ask-destination{color:#0645BC;font-size:24px;text-shadow:0 0 3px white}.ask-street-map .map-controls button{min-width:32px!important;width:32px!important;height:36px!important}.ask-street-map .leaflet-tooltip{max-width:160px;white-space:normal;font-size:10px}.ask-street-map .leaflet-control-attribution{font-size:8px!important}#ask-map-dialog .ask-street-map{height:52dvh!important}.ask-street-map .map-badge{display:none}
+.ask-street-map .leaflet-tooltip{width:max-content;max-width:160px;white-space:normal;overflow-wrap:normal}.trip-app .ask-street-map .leaflet-control-attribution a,#ask-map-dialog .leaflet-control-attribution a{display:inline;margin:0;font-size:8px;line-height:12px}.ask-street-map .leaflet-control-attribution{line-height:12px!important;max-width:100%}
+
+/* Composer grows only when its message actually wraps. */
+.trip-app .ask-composer textarea{height:30px;min-height:30px;overflow-y:hidden;box-sizing:border-box;align-self:center}
+
+/* Maps are standalone assistant messages rather than nested answer sections. */
+.trip-app .ask-message.ask-map-message>div{background:transparent;padding:0}
+.trip-app .ask-map-message .ask-route-card{margin-top:0}
+
+.language-choice{width:min(338px,calc(100vw - 32px));padding:24px;border:1px solid #E2E8F0;border-radius:15px;background:#F8F8FF;color:#192132}.language-choice::backdrop{background:#19213266;backdrop-filter:blur(8px)}.language-choice h2{font-size:20px;line-height:28px;margin:16px 0 8px}.language-choice p{font-size:14px;line-height:20px;margin:8px 0 16px}.language-choice button{width:100%;min-height:48px;margin-top:12px}.language-symbol{color:#1554E8}.language-symbol .icon{width:28px;height:28px}.brand>.meta{margin-left:auto}.trip-app .brand .ask-language{margin-left:auto}html[lang="zh-Hans"]{font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+
+.ask-trip-button{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:44px;margin-top:12px;font-size:12px}.ask-trip-button .icon{width:20px;height:20px}
+
+
+/* v9 additions inherit the v8 mobile system. No global resizing. */
+.trip-app #content.navigating~#toast{bottom:auto;top:calc(var(--safe-top) + 136px);height:fit-content}
+.home-location{display:flex;align-items:center;gap:8px;margin-left:auto}.trip-app .home-location .ask-language{min-width:52px;min-height:44px;font-size:12px}
+.trip-app button.tool{font:inherit;font-size:12px;color:var(--ink);cursor:pointer}.trip-app .ask-language{min-width:44px;min-height:44px;font-size:12px;gap:2px}.trip-app .ask-language .icon{width:18px;height:18px}
+.trip-app #content.ask-mode{padding:calc(var(--safe-top) + 56px) 16px calc(var(--dock-height,80px) + var(--safe-bottom) + 16px)}
+.ask-mode .topbar{grid-template-columns:44px minmax(0,1fr) 52px!important}.ask-mode .bottom-action{bottom:0;padding:8px 16px calc(8px + var(--safe-bottom))}
+.trip-app .ask-hero{height:112px;margin:0;border-radius:12px}.trip-app .ask-hero h1{font-size:17px;padding:24px 12px 10px}.trip-app .ask-hero h1 .icon{width:18px;height:18px}
+.trip-app .ask-quick{margin-top:16px}.trip-app .ask-quick h2{font-size:13px;margin:0 0 8px}.trip-app .ask-topic{min-height:64px;padding:8px;gap:6px}.trip-app .ask-topic strong{font-size:12px;line-height:16px}.trip-app .ask-topic small{font-size:11px;line-height:15px}.trip-app .ask-topic-icon{flex-basis:26px}.trip-app .ask-topic>.icon{display:none}
+.trip-app .ask-conversation{margin:16px 0}.trip-app .ask-message{font-size:14px;line-height:21px;gap:6px}.trip-app .guide-symbol{flex:0 0 20px;width:20px;font-size:20px}.trip-app .ask-message>div{padding:10px 12px}.trip-app .ask-message>div>p{font-size:14px;line-height:21px;margin:0}.trip-app .ask-demo-label{font-size:11px}
+.trip-app .ask-pick.has-photo{display:flex;align-items:stretch;min-height:80px}.trip-app .ask-pick.has-photo>img{width:76px;height:auto;min-height:80px;object-fit:cover;flex-shrink:0}.trip-app .has-photo .ask-pick-copy{padding:10px 8px}.trip-app .ask-pick strong{font-size:14px}.trip-app .ask-pick-copy{font-size:12px;line-height:18px}.trip-app .ask-card-link{font-size:12px}.trip-app .ask-branch-photo{height:120px}.trip-app .ask-composer textarea{font-size:14px;line-height:20px;max-height:108px;overflow-y:auto}.trip-app .ask-send{flex:0 0 44px}.trip-app .ask-route-steps{display:none}.trip-app .ask-route-origin{font-size:12px;margin:4px 0}.trip-app .ask-reply-action{font-size:13px}.trip-app .ask-street-map{height:180px!important;min-height:180px!important}.trip-app .ask-trip-button{font-size:14px}
+.trip-app .current-place-card{max-height:48dvh;padding:0 14px 10px;border-radius:16px;touch-action:pan-y;overscroll-behavior:contain}.trip-app .node-sheet-toggle{display:flex;align-items:center;justify-content:center;min-height:32px;width:100%;background:transparent;cursor:pointer}.node-sheet-toggle .sheet-handle{width:32px;margin:0}.trip-app .current-place-card h1{font-size:20px;line-height:25px;margin:6px 0 2px}.trip-app .current-place-card .node-address{display:block;font-size:12px;margin:0 0 10px;line-height:18px}.trip-app .current-place-card p{font-size:14px;line-height:21px}.node-teaser{display:flex;align-items:center;gap:10px}.node-teaser img{width:64px;height:64px;flex-shrink:0;object-fit:cover;border-radius:8px}.trip-app .node-teaser p{margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.trip-app .current-place-card .checkpoint-actions{margin-top:12px;flex-wrap:nowrap}.trip-app .current-place-card .checkpoint-actions button{font-size:13px;min-height:44px;padding:8px;gap:6px;display:flex;align-items:center;justify-content:center}.checkpoint-actions .icon{width:18px;height:18px}.trip-app .trip-swipe-hint{display:block;text-align:center;font-size:11px;margin-top:6px}.trip-app .current-place-card.is-expanded{max-height:78dvh;z-index:20}.node-full-details[hidden]{display:none}.trip-app .node-full-details p{display:block;overflow:visible;-webkit-line-clamp:unset;margin:6px 0 12px}.node-full-details{padding-top:8px}.node-full-details .guide-section{padding:12px 0}.node-full-details .guide-section h3{font-size:15px}.node-full-details .guide-verification{font-size:11px!important}.place-pin .current-node{outline:3px solid #087452;outline-offset:3px}.trip-app .navigation-progress{padding:12px}.trip-app .navigation-progress strong{font-size:13px}.trip-app .navigation-toolbar{margin-bottom:8px;gap:8px}.trip-app .navigation-toolbar .ask-language{margin-left:auto;background:#fff;border-radius:50%;width:44px;height:44px;padding:0}.trip-app .navigation-toolbar .ask-language .icon{display:none}.navigation-map .leaflet-top{top:146px!important}.navigation-map .leaflet-control-attribution{bottom:0}.local-help-title h1{font-size:24px}.trip-app .local-help-title p{font-size:13px;margin:4px 0 16px}
+.ar-ui{width:min(100%,var(--app-width));font-family:inherit}.ar-header{padding:var(--safe-top) 12px 4px;min-height:calc(48px + var(--safe-top))}.ar-header strong{font-size:16px;display:flex;align-items:center;gap:6px}.ar-header strong small{font-size:11px;font-weight:400;color:#E1E5ED}.ar-status,.ar-edge{top:calc(var(--safe-top) + 60px)}.ar-history-panel{top:calc(var(--safe-top) + 140px)}.ar-sheet{max-height:65%;border-radius:16px;bottom:calc(var(--safe-bottom) + 12px)}.ar-sheet-heading{padding:12px;gap:8px}.ar-sheet-content{padding:0 12px}.ar-sheet p{font-size:13px;line-height:20px}.ar-payment-options strong,.ar-payment-options small{font-size:11px}.ar-sheet h2{font-size:15px!important}.ar-time-heading strong{font-size:17px}.ar-scene-switch{bottom:calc(var(--safe-bottom) + 16px)}
+@media(max-height:650px){.trip-app .current-place-card{max-height:51dvh}.trip-app .current-place-card.is-expanded{max-height:76dvh}.trip-app .node-teaser{display:none}.trip-app .current-place-card .node-address{display:block;margin-bottom:4px}.trip-app .current-place-card .node-full-details p{display:block}.ar-sheet{max-height:68%}}
+@media(prefers-reduced-motion:reduce){.current-place-card,.ar-ui *{scroll-behavior:auto;animation:none!important;transition:none!important}}
