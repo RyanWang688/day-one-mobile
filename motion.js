@@ -57,7 +57,7 @@
     } else if (editingChanged) {
       play(document.querySelector('.preview-body'), [{opacity: .5, transform: 'translateY(12px)'}, {opacity: 1, transform: 'translateY(0)'}], 280);
     } else if (nodeChanged) {
-      play(document.querySelector('.current-place-card'), [{opacity: .4, transform: 'translateX(16px)'}, {opacity: 1, transform: 'translateX(0)'}], 280);
+      play(document.querySelector('.current-place-card'), [{opacity: .4, transform: 'translateX(-18px)'}, {opacity: 1, transform: 'translateX(0)'}], 280);
     } else {
       ['.ask-message', '.sc-message'].forEach((selector, i) => {
         [...document.querySelectorAll(selector)].slice(oldCounts[i]).forEach((el, n) => play(el,

@@ -23,3 +23,10 @@
 @media(max-width:350px){.story-pick{grid-template-columns:76px minmax(0,1fr);gap:10px}.story-pick>img{width:76px;height:100px}.story-section-heading{gap:8px}.story-section-heading>span{font-size:9px}.trip-app .story-section{padding:20px 14px}.story-hero>img{height:144px}.trip-app .story-section h2{font-size:17px}}
 @media(max-height:650px){.trip-app .current-place-card{max-height:52dvh}.trip-app .current-place-card.is-expanded{height:88dvh;max-height:calc(100dvh - var(--safe-top) - 52px)}.trip-app .node-sheet-scroll>.node-teaser{display:none}.trip-app .node-full-details .story-section p{display:block}.story-hero>img{height:132px}}
 @media(prefers-reduced-motion:reduce){.current-place-card,.current-place-card *{scroll-behavior:auto!important}.trip-app .navigation-progress{transition:none}}
+.current-place-card{touch-action:pan-y}.current-place-card.is-swiping{user-select:none;will-change:transform,opacity}
+.trip-app .current-place-card .checkpoint-actions>.secondary{flex:1;width:100%}
+.trip-app .node-teaser img{width:72px;height:56px;object-fit:cover;border-radius:8px}
+.trip-swipe-hint{position:relative;padding-top:5px}
+.trip-swipe-hint:before{content:'';position:absolute;top:0;left:0;height:2px;width:calc(var(--swipe-progress,0) * 100%);background:var(--blue);border-radius:2px}
+@media(max-height:650px){.trip-app .node-sheet-scroll>.node-teaser{display:flex}}
+@media(max-height:500px){.trip-app .node-teaser img{width:64px;height:48px}.trip-app .navigation-progress{display:none}.trip-app .node-sheet-toggle{height:32px;min-height:32px}.trip-app .current-place-card:not(.is-expanded){max-height:calc(100dvh - var(--safe-top) - var(--safe-bottom) - 76px)}.trip-app .current-place-card .node-address{display:none}.node-sheet-head{padding-bottom:6px}.node-sheet-footer{padding-top:6px}}
