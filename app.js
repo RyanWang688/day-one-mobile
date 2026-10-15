@@ -150,11 +150,16 @@ if(new URLSearchParams(location.search).get('view')==='summary'){state.tab='expl
 if(new URLSearchParams(location.search).get('view')==='place'){const id=new URLSearchParams(location.search).get('place')||'seeds';state.tab='explore';state.screen='spot';state.route=cleanRoute(templates[0]);state.spotId=Object.hasOwn(places,id)?id:'seeds';state.spotFrom='preview';state.inlineEditing=false}
 if(new URLSearchParams(location.search).get('view')==='explore-story'){state.tab='explore';state.screen='navigation';state.plan.start='state-library';state.plan.end='baillieu';state.route=cleanRoute(templates[0]);state.step=0;state.nodeExpanded=true}
 window.appLanguage=askLanguage;
+let mobileDock=null,mobileLayoutFrame=0;
+const mobileResize=new ResizeObserver(()=>{cancelAnimationFrame(mobileLayoutFrame);mobileLayoutFrame=requestAnimationFrame(syncMobileLayout)});
+mobileResize.observe($('#nav'),{box:'border-box'});
+mobileResize.observe($('#content'),{box:'border-box'});
 render();
 initAppTranslation();syncJourneyLanguage();
 
-function syncMobileLayout(){const input=$('#ask-input');if(input){input.style.height='0px';input.style.height=Math.min(input.scrollHeight,108)+'px'}const root=document.documentElement;root.style.setProperty('--nav-height',$('#nav').getBoundingClientRect().height+'px');root.style.setProperty('--dock-height',($('#content .bottom-action')?.getBoundingClientRect().height||0)+'px')}
-const mobileResize=new ResizeObserver(syncMobileLayout);mobileResize.observe($('#nav'));mobileResize.observe($('#content'));window.addEventListener('resize',syncMobileLayout);syncMobileLayout();
+function syncMobileLayout(){const input=$('#ask-input');if(input){input.style.height='0px';input.style.height=Math.min(input.scrollHeight,108)+'px'}const dock=$('#content .bottom-action');if(dock!==mobileDock){if(mobileDock)mobileResize.unobserve(mobileDock);mobileDock=dock;if(dock)mobileResize.observe(dock,{box:'border-box'})}const root=document.documentElement;for(const [name,height] of [['--nav-height',$('#nav').getBoundingClientRect().height],['--dock-height',dock?.getBoundingClientRect().height||0]]){const value=Math.ceil(height)+'px';if(root.style.getPropertyValue(name)!==value)root.style.setProperty(name,value)}}
+// Safe-area padding changes the border box, even when the content height is unchanged.
+window.addEventListener('resize',syncMobileLayout);window.visualViewport?.addEventListener('resize',syncMobileLayout);window.addEventListener('pageshow',syncMobileLayout);syncMobileLayout();
 
 function hideInlineDeletes(){document.querySelectorAll('.inline-stop-action.delete-visible').forEach(b=>{b.classList.remove('delete-visible');b.dataset.action='reveal-delete';b.textContent='•••';b.setAttribute('aria-label','Show delete button for '+b.dataset.name)})}
 document.addEventListener('click',e=>{if(!e.target.closest('.inline-stop-action'))hideInlineDeletes()});
