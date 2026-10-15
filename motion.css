@@ -1,0 +1,13 @@
+/* Short tactile feedback; no delays or layout changes during touch gestures. */
+@media (prefers-reduced-motion: no-preference) {
+  .trip-app button:not(:disabled):not(.leaflet-control button) {
+    transition: background-color 140ms ease, color 140ms ease, scale 140ms cubic-bezier(.22,1,.36,1);
+  }
+  .trip-app button:not(:disabled):active { scale: .975; }
+  #nav button:active { scale: .95; }
+  dialog::backdrop { animation: dialog-shade-in 220ms ease-out; }
+  @keyframes dialog-shade-in { from { background-color: transparent; } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trip-app button { transition: none !important; }
+}
