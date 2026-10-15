@@ -57,7 +57,10 @@
     } else if (editingChanged) {
       play(document.querySelector('.preview-body'), [{opacity: .5, transform: 'translateY(12px)'}, {opacity: 1, transform: 'translateY(0)'}], 280);
     } else if (nodeChanged) {
-      play(document.querySelector('.current-place-card'), [{opacity: .4, transform: 'translateX(-18px)'}, {opacity: 1, transform: 'translateX(0)'}], 280);
+      play(document.querySelector('.current-place-card'), [{opacity: .4, transform: `translateX(${Math.min(innerWidth * .72, 240)}px)`}, {opacity: 1, transform: 'translateX(0)'}], 340);
+      play(document.querySelector('.navigation-map'), [{opacity: .8}, {opacity: 1}], 240);
+      play(document.querySelector('.arrival-segments .current'), [{transform: 'scaleX(.2)', transformOrigin: 'left'}, {transform: 'scaleX(1)', transformOrigin: 'left'}], 320);
+      play(document.querySelector('.navigation-map .current-node'), [{transform: 'scale(.8)'}, {transform: 'scale(1.12)', offset: .65}, {transform: 'scale(1)'}], 360);
     } else {
       ['.ask-message', '.sc-message'].forEach((selector, i) => {
         [...document.querySelectorAll(selector)].slice(oldCounts[i]).forEach((el, n) => play(el,
