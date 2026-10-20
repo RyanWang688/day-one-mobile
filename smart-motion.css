@@ -1,0 +1,58 @@
+/* Smart motion tokens and shared micro-interactions. Motion is short, directional and never
+   blocks input; everything below collapses to instant changes under reduced motion. */
+:root{--sm-ease:cubic-bezier(.22,1,.36,1);--sm-spring:cubic-bezier(.34,1.56,.64,1);--sm-fast:140ms;--sm-base:240ms;--sm-slow:360ms}
+
+/* Sliding indicators */
+.sm-has-indicator{position:relative;isolation:isolate}
+.sm-indicator{position:absolute;left:0;top:0;z-index:-1;pointer-events:none;will-change:transform,width;transition:transform var(--sm-slow) var(--sm-ease),width var(--sm-slow) var(--sm-ease),height var(--sm-slow) var(--sm-ease)}
+.category-nav.sm-has-indicator button.active{background:transparent;color:#fff}
+.category-nav.sm-has-indicator button{position:relative;z-index:1;transition:color var(--sm-base) var(--sm-ease),background-color var(--sm-base) var(--sm-ease)}
+.category-nav>.sm-indicator.sm-tab-pill{display:block;min-height:0;border-radius:8px;background:var(--blue);box-shadow:0 4px 12px #1953D933}
+body[data-journey-track="campus"] .category-nav>.sm-indicator.sm-tab-pill{background:var(--mc-green,#00704A);box-shadow:0 4px 12px #00704A33}
+body[data-journey-track="campus"] .category-nav:not(.sm-has-indicator) button.active{background:var(--mc-green,#00704A)}
+#nav.sm-has-indicator{position:fixed}
+.sm-nav-pill{border-radius:14px;background:var(--soft)}
+#nav.sm-has-indicator button.active .icon{animation:sm-tab-pop var(--sm-slow) var(--sm-spring)}
+@keyframes sm-tab-pop{0%{transform:scale(.82)}60%{transform:scale(1.08)}100%{transform:none}}
+
+/* Images fade in once decoded */
+img{transition:opacity var(--sm-slow) var(--sm-ease)}
+img.sm-img-loading{opacity:0}
+
+/* Header elevation when content scrolls beneath it */
+.trip-app #content>.topbar,.trip-app #content>.brand,.journey-app main>.brand-row{transition:box-shadow var(--sm-base) var(--sm-ease),border-color var(--sm-base) var(--sm-ease)}
+.sm-scrolled .trip-app #content>.topbar,.sm-scrolled .trip-app #content>.brand,.sm-scrolled .journey-app main>.brand-row{box-shadow:0 6px 18px #1921320f;border-color:transparent}
+
+@media (prefers-reduced-motion:no-preference){
+ /* Press feedback for every tappable surface, including Journey Tree (index has motion.css). */
+ .journey-app button:not(:disabled),.journey-app .card.interactive{transition:scale var(--sm-fast) var(--sm-ease),background-color var(--sm-fast),border-color var(--sm-fast),box-shadow var(--sm-base) var(--sm-ease)}
+ .journey-app button:not(:disabled):active{scale:.975}
+ .journey-app .card.interactive:active,.trip-app .card:is(button):active{scale:.985}
+ .jl-step-card .explore .jl-svg,.journey-app .explore .icon{transition:transform var(--sm-base) var(--sm-ease)}
+ @media (hover:hover){
+  .journey-app .card.interactive:hover{box-shadow:0 10px 28px #19213214}
+  .jl-step-card:hover .explore .jl-svg,.journey-app .card.interactive:hover .explore .icon{transform:rotate(-45deg) translate(2px,-2px)}
+  .trip-app .card:is(button):hover{box-shadow:0 8px 24px #19213212}
+ }
+ /* Toast rises from the navigation bar instead of blinking on. */
+ #toast{transition:opacity var(--sm-base) var(--sm-ease),transform var(--sm-slow) var(--sm-spring);transform:translate(-50%,12px) scale(.98)}
+ #toast.show{transform:translate(-50%,0) scale(1)}
+ /* Smooth accordions where the browser supports animating to auto height. */
+ @supports (interpolate-size:allow-keywords){
+  :root{interpolate-size:allow-keywords}
+  details::details-content{block-size:0;overflow:clip;transition:block-size var(--sm-base) var(--sm-ease),content-visibility var(--sm-base) allow-discrete}
+  details[open]::details-content{block-size:auto}
+ }
+ .jl-source summary:after,.lic-chevron,.jg-phrase summary>span:last-child{transition:transform var(--sm-base) var(--sm-ease)}
+ /* Checklist ticks pop. */
+ .jl-checklist input:checked{animation:sm-tick var(--sm-slow) var(--sm-spring)}
+ @keyframes sm-tick{0%{transform:scale(.7)}60%{transform:scale(1.15)}100%{transform:none}}
+ /* Selected choices settle in. */
+ .jl-choice.is-selected,.jl-country.is-selected,.mc-option.is-selected{animation:sm-settle var(--sm-base) var(--sm-ease)}
+ @keyframes sm-settle{0%{transform:scale(.985)}100%{transform:none}}
+}
+@media (prefers-reduced-motion:reduce){
+ .sm-indicator,img,#toast{transition:none!important}
+ img.sm-img-loading{opacity:1}
+ #nav.sm-has-indicator button.active .icon{animation:none}
+}
