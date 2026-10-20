@@ -120,7 +120,7 @@ const jlCampus=(()=>{
  const icon=n=>`<svg class="jl-svg mc-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="${icons[n]||icons.info}"/></svg>`;
  let ctx=null;
  const T=(en,zh)=>ctx.t(en,zh),P=p=>ctx.pair(p);
- const link=id=>jlSources[id]?`<a class="mc-direction" href="${jlSources[id][1]}" target="_blank" rel="noopener noreferrer">${ctx.esc(jlSources[id][0].split(' · ').pop())}<span aria-hidden="true">→</span><span class="jl-sr">${T('(opens in a new tab)','（在新标签页打开）')}</span></a>`:'';
+ const link=id=>jlSources[id]?`<a class="mc-direction" href="${jlSources[id][1]}" target="_blank" rel="noopener noreferrer">${ctx.esc(jlSourceName(id).split(' · ').pop())}<span aria-hidden="true">→</span><span class="jl-sr">${T('(opens in a new tab)','（在新标签页打开）')}</span></a>`:'';
  const alert=(kind,title,copy)=>`<div class="mc-alert mc-${kind}" role="note">${icon(kind==='warning'?'warn':kind==='success'?'ok':'info')}<div><strong>${title}</strong><p>${copy}</p></div></div>`;
  const pick=(field,items,value,cls='')=>`<div class="mc-options ${cls}" role="radiogroup">${items.map(([id,en,zh,hint,hintZh,ic])=>`<button class="mc-option ${value===id?'is-selected':''}" role="radio" aria-checked="${value===id}" data-jl="campus" data-field="${field}" data-value="${id}">${ic?`<span class="mc-option-icon">${icon(ic)}</span>`:''}<span class="mc-option-text"><strong>${T(en,zh)}</strong>${hint?`<small>${T(hint,hintZh)}</small>`:''}</span><span class="mc-radio" aria-hidden="true"></span></button>`).join('')}</div>`;
 
