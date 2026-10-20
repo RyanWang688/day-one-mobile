@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "day-one",
+      "runtimeExecutable": "D:\\apps\\WebStorm 2022.1\\node.exe",
+      "runtimeArgs": ["C:\\Users\\YueWang\\AppData\\Local\\Temp\\claude\\C--Users-YueWang-AppData-Roaming-Claude-scratch-workspaces-7e9154f6-a4f0-4df5-b7a0-dd90c9e43e1c-7a248886-f6be-4a18-9c57-0d8ca2e27127-scratch-2026-10-20-ba2af6\\d7e3fb45-7693-4b16-9a0e-8adb476ddf60\\scratchpad\\serve.js", "D:\\workshop\\day-one-mobile", "5173"],
+      "port": 5173
+    }
+  ]
+}
