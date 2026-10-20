@@ -25,9 +25,10 @@ const jlSources={
 const jlCountries=[['CN','China','中国'],['ID','Indonesia','印度尼西亚'],['KR','South Korea','韩国'],['DE','Germany','德国'],['AR','Argentina','阿根廷'],['JP','Japan','日本'],['GB','United Kingdom','英国'],['IN','India','印度'],['OTHER','Somewhere else','其他国家或地区']];
 // Country conventions, not a claim about an individual's driving experience.
 const jlCountrySides={CN:'right',ID:'left',KR:'right',DE:'right',AR:'right',JP:'left',GB:'left',IN:'left'};
-const jlStepImages={driving:['city.jpg','ar-parking-street.jpg','city.jpg','city.jpg','ar-parking-street.jpg','city.jpg'],transport:['city.jpg','ar-myki-reader.jpg','city.jpg','city.jpg','ar-myki-reader.jpg','city.jpg']};
+// One photo per step, never repeated across journeys; sources are listed in PHOTO-CREDITS.html.
+const jlStepImages={driving:['driving-dashboard.jpg','driving-freeway.jpg','driving-interchange.jpg','driving-vicroads.jpg','driving-hookturn.jpg','ar-parking-street.jpg'],transport:['transport-station.jpg','ar-myki-reader.jpg','transport-tram.jpg','transport-disruption.jpg','transport-departures.jpg','transport-help.jpg']};
 const jlTracks={
- driving:{name:['Your Victorian licence','取得维州驾照'],intro:['A clear path to your licence.','把取得驾照的路径理清楚。'],copy:['Start with your overseas licence or first L, then follow the stages and application steps.','从海外驾照或第一张 L 开始，了解牌照阶段与申请步骤。'],image:'city.jpg',steps:[
+ driving:{name:['Your Victorian licence','取得维州驾照'],intro:['A clear path to your licence.','把取得驾照的路径理清楚。'],copy:['Start with your overseas licence or first L, then follow the stages and application steps.','从海外驾照或第一张 L 开始，了解牌照阶段与申请步骤。'],image:'driving-ocean-road.jpg',steps:[
   [['Your driving background','你的驾驶背景'],['Choose the country or region you know.','选择熟悉的国家或地区。']],
   [['Your licence pathway','你的驾照路径'],['Use your age, issuing country and recognised licence years.','根据年龄、发证地区与获认可的持证年限了解路径。']],
   [['L, red P, green P & Full','L、红 P、绿 P 与 Full'],['See what each stage allows and how they connect.','看懂各阶段的区别与衔接。']],

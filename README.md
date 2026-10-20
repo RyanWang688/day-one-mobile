@@ -6,6 +6,14 @@
 
 部署到 GitHub Pages 后，直接打开站点根链接。入口为 index.html，无原型外框、虚构状态栏或设备缩放。可通过浏览器的“添加到主屏幕”使用独立窗口，支持真实设备 safe area。
 
+## v13 更新
+
+- Journey Tree 每次进入默认显示 Healthcare；各旅程进度仍会保留。标签改为可横向滑动，Campus 与其他标签同为蓝色。
+- 新增「住宿租房」（住宿方式选择、安全看房清单、租约类型、押金与房屋状况报告、维修/室友/搬离）和「日常起居」（买菜、天气与防晒、垃圾分类与 10 分退款、开销与求助电话）两条旅程，共 4 个新情景指南。依据 Consumer Affairs Victoria、SunSmart、healthdirect、Victoria Police 等官方页面，2026 年 10 月 20 日核对。
+- 所有旅程弹窗左侧的步骤序号与 Healthcare 统一为圆形：当前步骤蓝色，已浏览为绿色勾。
+- 底部导航 Saved 改为 Account。账户页包括资料头像、三项统计、各旅程进度、本设备收藏、语言与动效偏好、求助电话，以及清除数据（需二次确认）。数据只保存在本设备。
+- Transport、Driving 及新旅程更换为 21 张 Wikimedia Commons 授权照片（CC0 / CC BY / CC BY-SA），旅程之间不重复使用同一张照片，署名见 PHOTO-CREDITS.html。
+
 ## v12 更新
 
 - Journey Tree 开放 Campus（校园）旅程，面向第一次来澳洲的国际学生，共 6 步：你的起点 → 落地第一周 → 校园入门设置 → 适应澳洲学习方式 → 课堂之外的生活 → 安顿行动清单。

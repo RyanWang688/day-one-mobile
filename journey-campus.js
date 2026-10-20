@@ -1,6 +1,8 @@
 /* Campus journey for first-time international students. Official pages checked 20 Oct 2026.
    Layout borrows Medicare / Services Australia patterns: page alerts, numbered task steps,
    key-information boxes and direction links. */
+// Data-driven journeys register here; journey-learning.js renders their tabs, overview and dialog.
+const jlCustomTracks={};
 Object.assign(jlSources,{
  newStudents:['University of Melbourne · New Student Checklist','https://students.unimelb.edu.au/new-students/new-student-checklist'],
  setUp:['University of Melbourne · Get set up in Melbourne','https://students.unimelb.edu.au/new-students/new-student-checklist/international-student-checklist/get-set-up-in-melbourne'],
@@ -48,7 +50,7 @@ jlTracks.campus={name:['Campus life in Melbourne','墨尔本校园生活'],intro
  [['Life beyond class','课堂之外的生活'],['Work rights, renting, scams and wellbeing.','打工权益、租房、防诈骗与身心健康。']],
  [['Your settling-in checklist','你的安顿行动清单'],['Keep the actions that matter this semester.','保存这学期真正需要完成的行动。']]
 ]};
-jlStepImages.campus=['place-quad.jpg','city.jpg','guide-library-dome.jpg','guide-library-study.jpg','place-lincoln.jpg','guide-library-books.jpg'];
+jlStepImages.campus=['explore-coffee.jpg','route-coffee.jpg','guide-library-dome.jpg','guide-library-study.jpg','place-lincoln.jpg','guide-library-books.jpg'];
 
 /* Situation guides follow the same three-step, freely explorable format as Transport and Driving. */
 Object.assign(jlGuides,{
@@ -167,6 +169,8 @@ const jlCampus=(()=>{
   phases:t=>[t('Arrive & set up','落地与安顿'),t('Campus & study life','校园与学习'),t('Your next steps','你的下一步')],
   caseIds:p=>p.step===3?['deadline','integrity']:['work','rental','scam','wellbeing'],
   checklist:t=>[t('Tell the University my Australian address, and update it within 7 days of any move.','向学校申报在澳地址，之后每次搬家 7 天内更新。'),t('Keep my OSHC active and save my insurer’s app or card.','保持 OSHC 有效，保存保险公司应用或电子卡。'),t('Set up my.unimelb, student email, the LMS and campus wifi.','开通 my.unimelb、学生邮箱、LMS 与校园无线网络。'),t('Order and collect my student card.','申请并领取学生卡。'),t('Complete compulsory modules and read the Student Charter.','完成必修线上模块，阅读学生章程。'),t('Add every due date and weighting to my calendar.','把所有截止日期和占分加入日历。'),t('Save Stop 1, CAPS, SafeZone and Lifeline (13 11 14).','保存 Stop 1、CAPS、SafeZone 与 Lifeline（13 11 14）。'),t('If I work: get a TFN, keep payslips and track hours each fortnight.','如果打工：办理税号、保存工资单，并按两周记录工时。')],
-  sources:['address','visaRules','oshcGov','newStudents','stop1','adjust','visa500','fairwork','caps','lifeline']
+  sources:['address','visaRules','oshcGov','newStudents','stop1','adjust','visa500','fairwork','caps','lifeline'],
+  tab:['Campus','校园'],title:['Campus journey','校园学习旅程'],guideKicker:['CAMPUS GUIDE','校园情景指南'],recapLine:['Your first semester','你的第一学期'],startHelp:['Choose where you are in your move.','请选择你目前所处的阶段。']
  };
 })();
+jlCustomTracks.campus=jlCampus;

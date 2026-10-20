@@ -8,8 +8,6 @@
 .category-nav.sm-has-indicator button.active{background:transparent;color:#fff}
 .category-nav.sm-has-indicator button{position:relative;z-index:1;transition:color var(--sm-base) var(--sm-ease),background-color var(--sm-base) var(--sm-ease)}
 .category-nav>.sm-indicator.sm-tab-pill{display:block;min-height:0;border-radius:8px;background:var(--blue);box-shadow:0 4px 12px #1953D933}
-body[data-journey-track="campus"] .category-nav>.sm-indicator.sm-tab-pill{background:var(--mc-green,#00704A);box-shadow:0 4px 12px #00704A33}
-body[data-journey-track="campus"] .category-nav:not(.sm-has-indicator) button.active{background:var(--mc-green,#00704A)}
 #nav.sm-has-indicator{position:fixed}
 .sm-nav-pill{border-radius:14px;background:var(--soft)}
 #nav.sm-has-indicator button.active .icon{animation:sm-tab-pop var(--sm-slow) var(--sm-spring)}

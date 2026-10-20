@@ -3,7 +3,26 @@
 :root{--mc-green:#00704A;--mc-green-ink:#005437;--mc-green-soft:#E6F2EC;--mc-amber:#9A5B00;--mc-amber-soft:#FFF4E0;--mc-red:#B3261E;--mc-red-soft:#FDECEA;--mc-info-soft:#EAF0FD}
 body[data-journey-track="campus"]{--accent:var(--mc-green)}
 body[data-journey-track="campus"] .jl-top-progress span{background:var(--mc-green)}
-body[data-journey-track="campus"] .jl-rail button.is-done>span{background:var(--mc-green)}
+
+/* Journey tabs scroll horizontally now that there are six. */
+.journey-app .category-nav{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:20px -16px 24px;padding:2px 16px;scroll-snap-type:x proximity;scroll-padding-inline:16px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12px,#000 calc(100% - 20px),transparent);mask-image:linear-gradient(90deg,transparent,#000 12px,#000 calc(100% - 20px),transparent)}
+.journey-app .category-nav::-webkit-scrollbar{display:none}
+.journey-app .category-nav button,.journey-app .category-nav>span:not(.sm-indicator){flex:0 0 auto;min-height:44px;padding:6px 16px;scroll-snap-align:start;white-space:nowrap}
+
+/* Step rail matches Healthcare: round numbers, blue for the current step, green tick when explored. */
+.jl-rail button>span{width:28px;height:28px;border-radius:50%;background:rgba(249,248,255,.9);color:var(--ink);font-size:.75rem;outline:none;border:0;box-shadow:none;transition:background-color 200ms,color 200ms,transform 260ms cubic-bezier(.34,1.56,.64,1)}
+.jl-rail button[aria-current="step"]>span{background:var(--link);color:white;outline:none;font-weight:600;transform:scale(1.08)}
+.jl-rail button.is-done:not([aria-current="step"])>span{background:var(--success);color:white}
+.jl-rail button .jl-svg{width:14px;height:14px;stroke-width:2.4}
+
+/* Jump to a recommended step, and tap-to-call numbers. */
+.mc-jump{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;min-height:48px;margin-top:12px;padding:10px 14px;border:0;border-radius:10px;background:var(--blue);color:white;font-size:14px;font-weight:600;text-align:left;cursor:pointer}
+.mc-jump span{transition:transform 180ms cubic-bezier(.22,1,.36,1)}.mc-jump:hover span{transform:translateX(3px)}
+.mc-numbers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.mc-numbers a{display:flex;flex-direction:column;gap:2px;min-height:64px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);text-decoration:none}
+.mc-numbers strong{font-size:17px;line-height:22px;font-variant-numeric:tabular-nums;color:var(--link)}.mc-numbers span{font-size:12px;line-height:17px;color:var(--muted)}
+.mc-numbers .is-urgent a{background:var(--mc-red-soft);border-color:#F2C4BF}.mc-numbers .is-urgent strong{color:var(--mc-red)}
+@media(max-width:359px){.mc-numbers{grid-template-columns:1fr}}
 .mc-kicker{color:var(--mc-green)!important}
 .jl-reading h2 .mc-optional{font-size:12px;font-weight:500;color:var(--muted);margin-left:4px}
 
