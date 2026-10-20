@@ -27,13 +27,13 @@ const jlCountries=[['CN','China','中国'],['ID','Indonesia','印度尼西亚'],
 const jlCountrySides={CN:'right',ID:'left',KR:'right',DE:'right',AR:'right',JP:'left',GB:'left',IN:'left'};
 const jlStepImages={driving:['city.jpg','ar-parking-street.jpg','city.jpg','city.jpg','ar-parking-street.jpg','city.jpg'],transport:['city.jpg','ar-myki-reader.jpg','city.jpg','city.jpg','ar-myki-reader.jpg','city.jpg']};
 const jlTracks={
- driving:{name:['Driving in Victoria','在维州开车'],intro:['A familiar road. A different rhythm.','熟悉驾驶，从重新认识道路开始。'],copy:['Build your licence plan, learn the local differences, then explore everyday situations.','理清驾照路径，理解本地差异，再了解突发情况的处理。'],image:'ar-parking-street.jpg',steps:[
-  [['Your driving background','你的驾驶背景'],['Start with what feels familiar.','从你熟悉的规则开始。']],
-  [['Your licence pathway','你的驾照路径'],['An overseas licence or a first licence?','已有海外驾照，还是第一次学车？']],
-  [['Everyday road differences','日常道路差异'],['Left-side driving, signs and safe choices.','靠左行驶、路牌与安全判断。']],
-  [['A Melbourne hook turn','看懂墨尔本钩形转弯'],['Follow the car through a signed intersection.','沿着图解看懂有标志路口的转弯过程。']],
-  [['Cover, breakdowns & accidents','保险、抛锚与事故'],['Explore what to do before and after things go wrong.','图解了解出发前和出意外后该怎么处理。']],
-  [['Your road-ready checklist','你的上路准备清单'],['Keep the steps you still need to take.','留下接下来需要完成的行动。']]
+ driving:{name:['Your Victorian licence','取得维州驾照'],intro:['A clear path to your licence.','把取得驾照的路径理清楚。'],copy:['Start with your overseas licence or first L, then follow the stages and application steps.','从海外驾照或第一张 L 开始，了解牌照阶段与申请步骤。'],image:'city.jpg',steps:[
+  [['Your driving background','你的驾驶背景'],['Choose the country or region you know.','选择熟悉的国家或地区。']],
+  [['Your licence pathway','你的驾照路径'],['Use your age, issuing country and recognised licence years.','根据年龄、发证地区与获认可的持证年限了解路径。']],
+  [['L, red P, green P & Full','L、红 P、绿 P 与 Full'],['See what each stage allows and how they connect.','看懂各阶段的区别与衔接。']],
+  [['Apply, step by step','按步骤申请驾照'],['Documents, appointments, learner requirements and assessments.','资料、预约、学习持证要求与评估。']],
+  [['Help on the road','上路后的情景处理'],['Insurance, breakdowns, accidents and local road situations.','保险、抛锚、事故与本地道路情景。']],
+  [['Your licence checklist','你的驾照行动清单'],['Keep the actual steps you still need to take.','保存接下来需要完成的实际行动。']]
  ]},
  transport:{name:['Melbourne transport','墨尔本公共交通'],intro:['Find your way. Keep your options.','熟悉出行，也为变化做好准备。'],copy:['Learn the ticket rhythm, explore a first trip, and find a plan B when services change.','理解票制，了解第一次乘车，并在运营变化时找到备选方案。'],image:'city.jpg',steps:[
   [['Your travel background','你的出行背景'],['Bring your habits; check what changes.','从你的习惯出发，看看哪些不同。']],
