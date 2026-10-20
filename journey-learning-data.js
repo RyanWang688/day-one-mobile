@@ -11,7 +11,9 @@ const jlSources={
  insurance:['Victoria Legal Aid · Driving and accidents','https://www.legalaid.vic.gov.au/driving-and-accidents'],
  emergency:['Victoria Police · Contact','https://www.police.vic.gov.au/contact'],
  myki:['Transport Victoria · Tap on and off','https://transport.vic.gov.au/tickets-and-payments/myki/tap-on-and-off-with-myki'],
- payments:['Transport Victoria · Payment options','https://transport.vic.gov.au/news-and-resources/campaigns/tap-and-go'],
+ payments:['Transport Victoria · Payment options','https://transport.vic.gov.au/tickets-and-payments/contactless'],
+ contactless:['Transport Victoria · Cards and digital wallets','https://transport.vic.gov.au/tickets-and-payments/contactless/contactless-payment-frequently-asked-questions'],
+ concessions:['Transport Victoria · Contactless concessions','https://transport.vic.gov.au/news-and-resources/campaigns/tap-and-go/concessions'],
  topup:['Transport Victoria · In-person myki top ups','https://transport.vic.gov.au/tickets-and-payments/myki/top-up-your-myki/top-up-in-person'],
  students:['Transport Victoria · Student eligibility','https://transport.vic.gov.au/tickets-and-payments/myki/myki-types/students'],
  works:['Transport Victoria · Disruptions','https://transport.vic.gov.au/disruptions/disruptions-information'],
@@ -32,7 +34,7 @@ const jlTracks={
  ]},
  transport:{name:['Melbourne transport','墨尔本公共交通'],intro:['Find your way. Keep your options.','熟悉出行，也为变化做好准备。'],copy:['Learn the ticket rhythm, practise a first trip, and find a plan B when services change.','理解票制，练习第一次乘车，并在运营变化时找到备选方案。'],image:'city.jpg',steps:[
   [['Your travel background','你的出行背景'],['Bring your habits; check what changes.','从你的习惯出发，看看哪些不同。']],
-  [['A ticket that makes sense','看懂本地票制'],['Explore myki by train, tram and bus.','分别认识火车、电车和公交的 myki 规则。']],
+  [['A ticket that makes sense','看懂本地票制'],['Bank card, Apple Pay, Google Pay or myki.','银行卡、Apple Pay、Google Pay 或 myki。']],
   [['Your first tram trip','第一次乘坐电车'],['From the free zone to a paid journey.','从免费区到需要付费的行程。']],
   [['When trains cannot run','火车无法运行时'],['Works, sudden disruption and accessible alternatives.','施工、临时中断与无障碍替代方案。']],
   [['Small moments, local habits','小场景里的本地习惯'],['Missed stops, boarding and ticket checks.','坐过站、上下车与查票。']],
@@ -68,8 +70,8 @@ const jlScenarios={
  ]},
  tram:{title:['Beyond the free zone','离开电车免费区'],intro:['Your practice tram trip starts inside the Free Tram Zone and ends outside it in Zone 1.','模拟行程：从电车免费区出发，终点位于区外的 Zone 1。'],scene:'ticket',questions:[
   jlQ(['Is this whole trip free?','这趟行程全程免费吗？'],[['Yes, because I board in the free zone','是，因为我从免费区上车'],['No; the destination is outside the free zone','不是，终点在免费区之外'],['All Melbourne trams are free','墨尔本所有电车都免费']],1,['A trip leaving the free zone needs a valid paid ticket.','离开免费区的行程需要有效付费车票。'],'myki'),
-  jlQ(['This exercise uses myki. What do you do when boarding?','本练习使用 myki。上车时应怎么做？'],[['Skip the reader because the start is free','起点免费，所以不刷'],['Tap three different cards','连续刷三张不同卡'],['Tap on and check the reader confirms success','刷卡上车，并确认读卡器提示成功']],2,['Use the reader and check its confirmation.','使用读卡器并确认已成功刷卡。'],'myki'),
-  jlQ(['Your tram journey is entirely in Zone 1. Tap off?','这趟电车行程全程在 Zone 1，下车需要刷卡吗？'],[['No tap off is needed for this myki tram trip','这类 myki 电车行程不需要下车刷卡'],['Always, just like a train','总是需要，和火车一样'],['Only when the tram is busy','只有人多时需要']],0,['Zone 1 myki tram trips need a tap on, not a tap off.','Zone 1 的 myki 电车行程需要上车刷卡，不需要下车刷卡。'],'myki')
+  jlQ(['You choose Apple Pay. What do you do when boarding?','这次使用 Apple Pay。上车时应怎么做？'],[['Skip the reader because the start is free','起点免费，所以不刷'],['Tap three different cards','连续刷三张不同卡'],['Tap on and check the reader confirms success','刷卡上车，并确认读卡器提示成功']],2,['Tap your supported Visa or Mastercard in Apple Pay and check the reader confirms success.','使用 Apple Pay 中受支持的 Visa 或 Mastercard，并确认读卡器提示成功。'],'contactless'),
+  jlQ(['After using Apple Pay, you change to a train. What should you use?','刚用 Apple Pay 乘车，接着换乘火车，应使用什么？'],[['The same card in Apple Pay on the same phone','同一部手机 Apple Pay 中的同一张卡'],['The physical card from the same account','同一账户的实体银行卡'],['A watch linked to the same account','绑定同一账户的手表']],0,['Keep the same card on the same device when transferring and tapping off. A physical card, phone and watch are separate payment methods.','换乘与下车刷卡时，继续使用同一设备上的同一张卡。实体卡、手机和手表会被视为不同支付方式。'],'contactless')
  ]},
  works:{title:['Planned rail works','计划性铁路施工'],intro:['In this situation, replacement buses run between two stations this weekend.','这次情境中，本周末两站之间火车改为接驳巴士。'],scene:'replacement',questions:[
   jlQ(['Before leaving, what do you check?','出门前应确认什么？'],[['Only my usual train timetable','只看平时的时刻表'],['The official works notice, affected segment and replacement stops','官方施工通知、受影响区段及接驳站点'],['Whether a friend went yesterday','朋友昨天是否坐过']],1,['A works notice can change the route and boarding location.','施工通知可能改变路线与上车地点。'],'works'),

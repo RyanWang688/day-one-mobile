@@ -27,3 +27,5 @@ body[data-journey-track]:not([data-journey-track="healthcare"]) .journey-top>.jo
 @media(prefers-reduced-motion:reduce){.jl-panel *,.jl-overview *{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 .jl-compare .jl-country-label{display:flex;align-items:flex-start;gap:6px}.jl-country-label .jl-flag{width:20px;height:15px;margin-top:1px;border-radius:2px}.jl-country-label>span{min-width:0;overflow-wrap:anywhere}
+
+.jl-payment-options{list-style:none;padding:0;margin:12px 0;display:grid;gap:8px}.jl-payment-options li{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:10px;background:white}.jl-payment-options .jl-svg{width:18px;height:18px;margin-top:2px;color:var(--blue)}.jl-payment-options li>div{min-width:0}.jl-payment-options strong{display:block;font-size:14px;line-height:21px}.jl-payment-options small{display:block;font-size:12px;line-height:19px;color:var(--muted);margin-top:3px}
