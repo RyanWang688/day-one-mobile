@@ -23,6 +23,9 @@ const jlSources={
  priority:['Metro · On the train','https://www.metrotrains.com.au/station-accessibility-features/on-the-train/']
 };
 const jlCountries=[['CN','China','中国'],['ID','Indonesia','印度尼西亚'],['KR','South Korea','韩国'],['DE','Germany','德国'],['AR','Argentina','阿根廷'],['JP','Japan','日本'],['GB','United Kingdom','英国'],['IN','India','印度'],['OTHER','Somewhere else','其他国家或地区']];
+// Country conventions, not a claim about an individual's driving experience.
+const jlCountrySides={CN:'right',ID:'left',KR:'right',DE:'right',AR:'right',JP:'left',GB:'left',IN:'left'};
+const jlStepImages={driving:['city.jpg','ar-parking-street.jpg','city.jpg','city.jpg','ar-parking-street.jpg','city.jpg'],transport:['city.jpg','ar-myki-reader.jpg','city.jpg','city.jpg','ar-myki-reader.jpg','city.jpg']};
 const jlTracks={
  driving:{name:['Driving in Victoria','在维州开车'],intro:['A familiar road. A different rhythm.','熟悉驾驶，从重新认识道路开始。'],copy:['Build your licence plan, learn the local differences, then rehearse the unexpected.','理清驾照路径，理解本地差异，再练习突发情况。'],image:'ar-parking-street.jpg',steps:[
   [['Your driving background','你的驾驶背景'],['Start with what feels familiar.','从你熟悉的规则开始。']],
