@@ -1,0 +1,33 @@
+/* Scroll ownership, as in a native app: only the area under the finger scrolls.
+   1. The page never rubber-bands, pulls to refresh or swipes back at its edges.
+   2. Every inner scroller keeps its scroll to itself instead of passing it to the page.
+   3. Full-screen screens, open dialogs and the Journey tab lock the page behind them.
+   4. Fixed bars ignore drag gestures, so dragging a header or tab bar never moves content. */
+html,body{overscroll-behavior:none}
+
+/* Inner scrollers: lists, sheets, carousels, chips and dialogs. */
+.cards,.discovery-deck,.route-rail,.discovery-tabs,.ask-map-tabs,.ask-map-image,.chips,
+.editable-timeline,.node-sheet-scroll,.ar-sheet-content,.checkpoint,.ask-composer textarea,
+.category-nav,.mc-spot-tabs,.jl-rail,.jl-reading,.modal-scroll,dialog,#place-dialog{overscroll-behavior:contain}
+.cards,.discovery-deck,.route-rail,.discovery-tabs,.ask-map-tabs,.category-nav,.mc-spot-tabs{touch-action:pan-x pan-y;-webkit-overflow-scrolling:touch}
+
+/* Screens that fill the viewport: the map, sheet or camera is the whole screen. */
+html:has(#content:not([hidden])[data-screen="navigation"]),
+html:has(#content:not([hidden])[data-screen="arLens"]),
+html:has(#content:not([hidden])[data-screen="mapPicker"]),
+html:has(#content:not([hidden]).route-builder),
+/* Journey tab: the iframe owns scrolling. */
+html:has(#journey:not([hidden])),
+/* Any open modal dialog, including native <dialog> and Journey Tree dialogs. */
+html:has(dialog[open]),html:has(.jl-panel:not([hidden])),html:has(#overlay:not([hidden])){overflow:hidden}
+
+/* Fixed chrome is not a drag handle for the page underneath. */
+#nav,.trip-app #content>.topbar,.trip-app #content>.brand,.journey-app main>.brand-row,
+.navigation-top,.ar-header,.jl-header,.modal-header,.jl-footer,.actions{touch-action:manipulation}
+#nav,.trip-app #content>.topbar,.trip-app #content>.brand,.journey-app main>.brand-row{overscroll-behavior:none}
+
+/* Inline maps inside scrolling pages: one finger scrolls the page, two fingers move the map.
+   (With dragging off, Leaflet's own touch-action leaves page panning to the browser.) */
+.map-gesture-hint{position:absolute;inset:0;z-index:800;display:grid;place-items:center;padding:16px;background:#19213259;color:white;font-size:14px;font-weight:600;text-align:center;opacity:0;pointer-events:none;transition:opacity 180ms ease}
+.map-gesture-hint.is-visible{opacity:1}
+@media (prefers-reduced-motion:reduce){.map-gesture-hint{transition:none}}

@@ -17,6 +17,7 @@ function initMaps(){
  document.querySelectorAll('.real-map').forEach(el=>{
   if(el._leaflet_id)return;const askKey=el.dataset.askMap;let stops=el.dataset.stops?el.dataset.stops.split(','):[];const picker=el.dataset.picker==='true';
   const m=L.map(el,{zoomControl:false,scrollWheelZoom:false,touchZoom:true,zoomAnimation:false,fadeAnimation:false,dragging:true,doubleClickZoom:true,keyboard:true,attributionControl:true,zoomSnap:.25,minZoom:12,maxZoom:19,maxBounds:(state.inlineEditing||state.screen==='complete'||state.screen==='navigation')?null:[[-37.810,144.951],[-37.794,144.968]],maxBoundsViscosity:1,preferCanvas:false});liveMaps.push(m);
+  if(!picker&&(askKey||['explore','plan','preview'].includes(state.screen)))cooperativeMap(m,el);
   m.attributionControl.setPrefix(false);m.attributionControl.addAttribution('© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>');
   let glReady=false; m.createPane('offline').style.zIndex=190; m.createPane('labels').style.zIndex=410;m.getPane('labels').style.pointerEvents='none';
   const renderer=L.canvas({padding:.3,pane:'offline'});/* A detached renderer can still receive a queued frame during rapid view changes. */const redraw=renderer._redraw;renderer._redraw=function(){if(!this._map||!this._ctx){this._redrawRequest=null;return}return redraw.call(this)};const baseStyle={renderer,interactive:false};
