@@ -1,0 +1,36 @@
+/* Location status and correction for Ask This Place. */
+.ask-loc{margin:10px 0 0;padding:10px 10px 10px 12px;border:1px solid var(--line);border-radius:12px;background:white}
+.ask-loc-row{display:flex;align-items:center;gap:10px}
+.ask-loc-dot{position:relative;flex:0 0 10px;height:10px;border-radius:50%;background:#C98400}
+.ask-loc-dot:after{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid currentColor;color:#C9840055}
+.ask-loc.is-confirmed .ask-loc-dot,.ask-loc.is-precise .ask-loc-dot{background:var(--success)}.ask-loc.is-confirmed .ask-loc-dot:after,.ask-loc.is-precise .ask-loc-dot:after{color:#08745233}
+.ask-loc.is-trip .ask-loc-dot{background:var(--blue)}.ask-loc.is-trip .ask-loc-dot:after{color:#1953D933}
+.ask-loc-copy{flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px}.ask-loc-copy strong{font-size:.875rem;line-height:1.3;color:var(--ink)}.ask-loc-copy small{font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.trip-app .ask-loc-adjust{flex-shrink:0;display:inline-flex;align-items:center;gap:4px;min-height:40px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:white;color:var(--link);font-size:.8125rem;font-weight:600}
+.ask-loc-adjust .icon{width:16px;height:16px}
+.ask-loc-prompt{margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.trip-app .ask-loc-prompt p{margin:0 0 8px;font-size:.8125rem;line-height:1.4;color:var(--ink)}
+.ask-loc-choices{display:flex;flex-wrap:wrap;gap:8px}
+.trip-app .ask-loc-choices button{display:flex;flex-direction:column;align-items:flex-start;min-height:48px;padding:6px 12px;border:1px solid #C9D6F5;border-radius:10px;background:var(--soft);color:var(--ink);text-align:left}
+.ask-loc-choices strong{font-size:.8125rem;line-height:1.3}.ask-loc-choices small{font-size:.6875rem;color:var(--muted)}
+.trip-app .ask-loc-choices .is-other{justify-content:center;background:white;border-color:var(--line);color:var(--link);font-size:.8125rem;font-weight:600}
+
+#ask-loc-dialog{width:min(420px,100vw);max-width:100vw;max-height:min(86dvh,720px);margin:auto auto 0;padding:0;border:0;border-radius:20px 20px 0 0;background:white;box-shadow:var(--overlay-shadow);overflow:auto;overscroll-behavior:contain}
+#ask-loc-dialog::backdrop{background:#19213259}
+.ask-loc-sheet{padding:8px 16px calc(16px + var(--safe-bottom,0px))}
+.ask-loc-sheet header{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 0;background:white;z-index:1}
+.ask-loc-sheet header:before{content:'';position:absolute;top:0;left:50%;width:36px;height:4px;margin-left:-18px;border-radius:2px;background:#D5DAE3}
+.trip-app .ask-loc-sheet h2{margin:8px 0 0;font-size:1.125rem}.trip-app .ask-loc-sheet h3{margin:16px 0 6px;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.trip-app .ask-loc-intro{margin:4px 0 12px;font-size:.8125rem;line-height:1.45}
+.trip-app .ask-loc-gps{display:flex;align-items:center;gap:12px;width:100%;min-height:60px;padding:10px 14px;border:0;border-radius:12px;background:var(--blue);color:white;text-align:left}
+.ask-loc-gps .icon{width:22px;height:22px;flex-shrink:0}.ask-loc-gps strong{display:block;font-size:.9375rem}.ask-loc-gps small{display:block;margin-top:2px;font-size:.75rem;line-height:1.35;color:#E3EAFD}
+.ask-loc-list{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.trip-app .ask-loc-option{display:flex;align-items:center;gap:10px;width:100%;min-height:56px;padding:8px 12px;border:0;border-radius:0;background:white;color:var(--ink);text-align:left}
+.ask-loc-option+.ask-loc-option{border-top:1px solid var(--line)}
+.ask-loc-option-copy{flex:1;min-width:0}.ask-loc-option-copy strong{display:block;font-size:.875rem;line-height:1.3}.ask-loc-option-copy small{display:block;font-size:.75rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ask-loc-option-meta{display:flex;flex-direction:column;align-items:flex-end;gap:2px;flex-shrink:0;font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.ask-loc-option-meta em{font-style:normal;font-weight:700;color:var(--success)}
+.trip-app .ask-loc-option.is-current{background:#F5F7FD}.ask-loc-option.is-current .ask-loc-option-copy strong:after{content:' ✓';color:var(--blue)}
+.trip-app .ask-loc-option.is-best{background:#EEF8F3;box-shadow:inset 3px 0 0 var(--success)}
+.trip-app .ask-loc-note{margin:10px 0 0;font-size:.75rem}
+@media (prefers-reduced-motion:no-preference){#ask-loc-dialog[open]{animation:ask-loc-up 260ms cubic-bezier(.22,1,.36,1)}@keyframes ask-loc-up{from{transform:translateY(24px);opacity:.6}}}
